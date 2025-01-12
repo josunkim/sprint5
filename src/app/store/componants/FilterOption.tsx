@@ -16,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { Dispatch, SetStateAction } from "react";
 import { LuSearch } from "react-icons/lu";
-import { debounce } from "../hook/hook";
 
 interface FilterOptionProps {
   girdWidth: number;

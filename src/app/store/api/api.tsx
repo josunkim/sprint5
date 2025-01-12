@@ -7,8 +7,18 @@ const productAxios = axios.create({
 });
 
 interface ProductState {
-  bestProducts: any[]; // 베스트 상품 데이터
-  Products: any[]; // 최근 상품 데이터
+  bestProducts: {
+    name: string;
+    price: string;
+    favoriteCount: number;
+    images: string[];
+  }[]; // 베스트 상품 데이터
+  Products: {
+    name: string;
+    price: string;
+    favoriteCount: number;
+    images: string[];
+  }[]; // 최근 상품 데이터
   loading: boolean; // 로딩 상태
   error: string | null; // 에러 상태
   totalPage: number;
@@ -35,7 +45,7 @@ const useProductStore = create<ProductState>((set) => ({
       const params = { page, pageSize, orderBy: "favorite", keyword: "" };
       const response = await productAxios.get("", { params });
       set({ bestProducts: response.data.list, loading: false });
-    } catch (err: any) {
+    } catch (err: unknown) {
       set({ error: err.message, loading: false });
     }
   },
@@ -51,7 +61,7 @@ const useProductStore = create<ProductState>((set) => ({
         loading: false,
         totalPage: response.data.totalCount,
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       set({ error: err.message, loading: false });
     }
   },
