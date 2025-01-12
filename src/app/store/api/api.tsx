@@ -45,7 +45,7 @@ const useProductStore = create<ProductState>((set) => ({
       const params = { page, pageSize, orderBy: "favorite", keyword: "" };
       const response = await productAxios.get("", { params });
       set({ bestProducts: response.data.list, loading: false });
-    } catch (err: unknown) {
+    } catch (e) {
       set({ error: "error", loading: false });
     }
   },
@@ -61,7 +61,7 @@ const useProductStore = create<ProductState>((set) => ({
         loading: false,
         totalPage: response.data.totalCount,
       });
-    } catch (err: unknown) {
+    } catch (e) {
       set({ error: "error", loading: false });
     }
   },
