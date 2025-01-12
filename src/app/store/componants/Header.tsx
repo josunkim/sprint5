@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Box,
   HStack,
@@ -38,14 +37,14 @@ export const Header: React.FC = () => {
       </HStack>
 
       {isLogin ? (
-        <Button
+        <Link
+          {...LinkBtnStyle}
           onClick={() => {
             setIsLogin(!isLogin);
           }}
-          {...LinkBtnStyle}
         >
           로그인
-        </Button>
+        </Link>
       ) : (
         <Image
           onClick={() => setIsLogin(!isLogin)}
