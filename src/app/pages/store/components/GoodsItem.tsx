@@ -22,13 +22,13 @@ export const GoodsItem: React.FC<GoodsItemProps> = ({
         src={`${images[0]}`}
         alt="No Image"
         onError={(e) => {
-          e.currentTarget.src = "/no_image.png";
+          e.currentTarget.src = "/assets/no_image.png";
         }}
       />
       <Text>{name}</Text>
       <Text>{price}</Text>
       <HStack>
-        <Image src="ic_heart.png" alt="favorit" />
+        <Image src="/assets/ic_heart.png" alt="favorit" />
         <Text>{favoriteCount}</Text>
       </HStack>
     </GridItem>

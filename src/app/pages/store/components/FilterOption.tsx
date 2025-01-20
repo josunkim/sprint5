@@ -81,7 +81,7 @@ export const FilterOption: React.FC<FilterOptionProps> = ({
           alignItems={"center"}
         >
           {girdWidth < 3 ? (
-            <Image src="ic_sort.png" alt="" />
+            <Image src="/assets/ic_sort.png" alt="" />
           ) : (
             <SelectValueText px={5} py={"9px"} />
           )}

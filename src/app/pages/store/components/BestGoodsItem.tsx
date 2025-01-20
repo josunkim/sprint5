@@ -20,10 +20,10 @@ export const BestGoodsItem: React.FC<BestGoodsItemProps> = ({
       <Text>{price}</Text>
       <HStack>
         <Image
-          src="ic_heart.png"
+          src="/assets/ic_heart.png"
           alt="favorit"
           onError={(e) => {
-            e.currentTarget.src = "/no_image.png";
+            e.currentTarget.src = "/assets/no_image.png";
           }}
         />
         <Text>{favoriteCount}</Text>
